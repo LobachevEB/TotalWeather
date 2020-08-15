@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Вся погода</string>
+    <string name="location_stub1">Ларнака, Кипр</string>
+    <string name="location_stub2">Ярославль, Россия</string>
+</resources>

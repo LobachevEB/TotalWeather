@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Total Weather</string>
+    <string name="location_stub1">Larnaka, Cyprus</string>
+    <string name="location_stub2">Yaroslavl, Russia</string>
+</resources>
