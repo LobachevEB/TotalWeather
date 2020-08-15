@@ -3,4 +3,10 @@
     <string name="app_name">Вся погода</string>
     <string name="location_stub1">Ларнака, Кипр</string>
     <string name="location_stub2">Ярославль, Россия</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="atm_pressure">Атмосферное давление</string>
+    <string name="choose_location">Выберите город</string>
+    <string name="citi_btn">Выберите город</string>
+    <string name="your_location">Your Location</string>
+
 </resources>

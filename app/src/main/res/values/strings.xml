@@ -2,4 +2,9 @@
     <string name="app_name">Total Weather</string>
     <string name="location_stub1">Larnaka, Cyprus</string>
     <string name="location_stub2">Yaroslavl, Russia</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="atm_pressure">Atmospheric Pressure</string>
+    <string name="choose_location">Choose Location</string>
+    <string name="citi_btn">Choose Location</string>
+    <string name="your_location">Your Location</string>
 </resources>
