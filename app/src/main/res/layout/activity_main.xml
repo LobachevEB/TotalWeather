@@ -8,8 +8,8 @@
         tools:context=".MainActivity"
         android:background="@drawable/background">
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="195dp"
+            android:layout_height="38dp"
             android:text="@string/location_stub1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -34,8 +34,8 @@
             app:layout_constraintTop_toBottomOf="@+id/weatherImg" android:layout_marginTop="32dp"
             app:layout_constraintHorizontal_bias="0.525"/>
     <TextView
-            android:layout_width="208dp"
-            android:layout_height="54dp"
+            android:layout_width="206dp"
+            android:layout_height="59dp"
             android:text=""
             android:ems="10"
             android:id="@+id/temperature"
@@ -55,5 +55,13 @@
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="28dp"
             android:fontFamily="@font/arbutus_slab"
     />
+    <Button
+            android:text="@string/wiki_caption"
+            android:layout_width="88dp"
+            android:layout_height="41dp" android:id="@+id/wiki"
+            app:layout_constraintStart_toEndOf="@+id/location"
+            android:layout_marginStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023" app:layout_constraintTop_toTopOf="@+id/location"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

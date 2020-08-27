@@ -7,4 +7,7 @@
     <string name="choose_location">Choose Location</string>
     <string name="citi_btn">Choose Location</string>
     <string name="your_location">Your Location</string>
+    <string name="done">Done</string>
+    <string name="wiki_caption">Wiki</string>
+    <string name="wiki_url">https://en.wikipedia.org/wiki/</string>
 </resources>

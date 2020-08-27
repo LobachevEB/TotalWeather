@@ -51,4 +51,11 @@
             android:fontFamily="@font/arbutus_slab"
             android:textSize="16sp"
     />
+    <Button
+            android:text="@string/done"
+            android:layout_width="113dp"
+            android:layout_height="49dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="16dp"
+            android:id="@+id/done"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

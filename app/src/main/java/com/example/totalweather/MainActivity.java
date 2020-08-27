@@ -1,6 +1,7 @@
 package com.example.totalweather;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
@@ -11,6 +12,8 @@ import com.example.totalweather.processing.WeatherProcessing;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private final static int REQUEST_CODE = 1;
 
     final private String SAVE_TEMP_KEY = "SAVE_TEMP_KEY";
 
@@ -40,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 selectLocation();
+            }
+        });
+
+        Button wiki_btn = findViewById(R.id.wiki);
+        wiki_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView location = findViewById(R.id.location);
+                String url = getString(R.string.wiki_url) + (String) location.getText();
+                Uri uri = Uri.parse(url);
+                Intent browser = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(browser);
             }
         });
     }
@@ -106,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void selectLocation(){
-        startActivity(new Intent(this,ChooseLocation.class));
+        Intent intent = new Intent(this,ChooseLocation.class);
+        startActivityForResult(intent, REQUEST_CODE);
+        //startActivity(intent);
     }
 
     private void setValues(String Key,String Value){
@@ -117,4 +134,19 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data == null) {return;}
+        if (requestCode != REQUEST_CODE) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+
+        if (resultCode == RESULT_OK){
+            TextView location = findViewById(R.id.location);
+            location.setText(data.getStringExtra("Location"));
+        }
+    }
+
 }

@@ -8,5 +8,7 @@
     <string name="choose_location">Выберите город</string>
     <string name="citi_btn">Выберите город</string>
     <string name="your_location">Your Location</string>
-
+    <string name="done">Готово</string>
+    <string name="wiki_caption">Wiki</string>
+    <string name="wiki_url">https://ru.wikipedia.org/wiki/</string>
 </resources>
