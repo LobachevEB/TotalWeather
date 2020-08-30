@@ -1,67 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:background="@drawable/background">
-    <TextView
-            android:layout_width="179dp"
-            android:layout_height="65dp"
-            android:text=""
-            android:ems="10"
-            android:id="@+id/temperature"
-            app:layout_constraintStart_toEndOf="@+id/weatherImg" android:layout_marginStart="28dp"
-            android:textColor="@color/colorYellow"
-            android:textAlignment="textStart"
-            android:fontFamily="@font/arbutus_slab"
-            android:textSize="36sp" android:typeface="normal"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@+id/location" android:layout_marginTop="44dp"
-    />
-    <ImageView
-            android:layout_width="116dp"
-            android:layout_height="109dp" app:srcCompat="@drawable/ic_sunny" android:id="@+id/weatherImg"
-            app:layout_constraintStart_toStartOf="@+id/location" app:layout_constraintTop_toBottomOf="@+id/location"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="8dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/location_stub1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/arbutus_slab"
-            app:layout_constraintHorizontal_bias="0.675" app:layout_constraintVertical_bias="0.068"
-            android:textSize="24sp" android:typeface="normal"
-            android:textColor="@color/colorYellow"
-            android:id="@+id/location"
-    />
-    <CalendarView
-            android:layout_width="316dp"
-            android:layout_height="235dp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/calendarView"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintHorizontal_bias="0.069" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="4dp"/>
-    <Button
-            android:text="@string/citi_btn"
-            android:layout_width="234dp"
-            android:layout_height="48dp" android:id="@+id/citi_btn"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="124dp"
-            android:fontFamily="@font/arbutus_slab"
-            app:layout_constraintTop_toBottomOf="@+id/weatherImg"
-            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintStart_toStartOf="@+id/weatherImg"
-    />
-    <Button
-            android:text="@string/wiki_caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/wiki"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp" app:layout_constraintStart_toEndOf="@+id/location"
-            android:layout_marginStart="24dp"/>
+<FrameLayout android:layout_height="match_parent" android:layout_width="match_parent"
+             xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment
+            xmlns:tools="http://schemas.android.com/tools" android:name="com.example.totalweather.main_screen"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/main_screen"
+            tools:ignore="MissingClass" android:layout_height="match_parent" android:layout_width="match_parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
