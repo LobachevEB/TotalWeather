@@ -8,6 +8,7 @@ import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.totalweather.common.ShortWeatherAdapter;
 import com.example.totalweather.processing.WeatherProcessing;
 
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MainScreen = new main_screen();
     }
+
 
 
 

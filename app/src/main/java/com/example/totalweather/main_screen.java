@@ -14,13 +14,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.totalweather.common.ShortWeatherAdapter;
+import com.example.totalweather.processing.WeatherData;
 import com.example.totalweather.processing.WeatherProcessing;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class main_screen extends Fragment {
     private final static int REQUEST_CODE = 1;
 
     final private String SAVE_TEMP_KEY = "SAVE_TEMP_KEY";
 
+    private final String[] days = {"","",""};
+    private final String[] temperatures = {"","",""};
+    final ShortWeatherAdapter adapter = new ShortWeatherAdapter();
 
     private WeatherProcessing weatherProcessing = null;
     private String temperatureS = "";
@@ -28,7 +40,30 @@ public class main_screen extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        return inflater.inflate(R.layout.main_screen_fragment, container, false);
+
+        View view = inflater.inflate(R.layout.main_screen_fragment, container, false);
+        final RecyclerView recyclerView = view.findViewById(R.id.short_time_weather);
+        LinearLayoutManager mgr = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+        mgr.setSmoothScrollbarEnabled(true);
+        recyclerView.setLayoutManager(mgr);
+        recyclerView.setAdapter(adapter);
+
+
+        return view;
+    }
+
+    public void updateWeatherForward(Date dt,int interval) {
+        List<String> temperatures = new ArrayList<String>();
+        List<String> days = new ArrayList<String>();
+        TextView loc = getView().findViewById(R.id.location);
+        String location = loc.getText().toString();
+        WeatherProcessing wp = new WeatherProcessing();
+        for (int i = 0; i < interval; i++) {
+            WeatherData data = wp.getWeatherByDate(location,dt,i + 1);
+            days.add(data.getDate());
+            temperatures.add(data.getTemperature());
+        }
+        adapter.setParams(days,temperatures);
     }
 
     @Override
@@ -41,6 +76,9 @@ public class main_screen extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
+                Calendar cl = Calendar.getInstance();
+                cl.set(year,month,day);
+                updateWeatherForward(cl.getTime(),3);
                 temperatureS = weatherProcessing.getWeatherStub("");
                 setValues(SAVE_TEMP_KEY, temperatureS);
             }

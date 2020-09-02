@@ -7,7 +7,17 @@
             android:layout_height="match_parent"
             tools:context=".MainActivity"
             android:background="@drawable/background">
-        <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
+            tools:ignore="MissingConstraints"
+            android:id="@+id/short_time_weather"
+            app:layout_constraintTop_toBottomOf="@+id/temperature" android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/weatherImg" android:layout_marginStart="28dp"
+            android:layout_width="205dp"
+            android:layout_height="45dp"
+            tools:itemCount="3" tools:listitem="@layout/short_weather" android:clipChildren="true"
+            android:clipToPadding="true"/>
+    <TextView
                 android:layout_width="195dp"
                 android:layout_height="38dp"
                 android:text="@string/location_stub1"
@@ -33,21 +43,21 @@
                 tools:ignore="MissingConstraints"
                 app:layout_constraintTop_toBottomOf="@+id/weatherImg" android:layout_marginTop="32dp"
                 app:layout_constraintHorizontal_bias="0.525"/>
-        <TextView
-                android:layout_width="206dp"
-                android:layout_height="59dp"
-                android:text=""
-                android:ems="10"
-                android:id="@+id/temperature"
-                app:layout_constraintStart_toEndOf="@+id/weatherImg" android:layout_marginStart="28dp"
-                android:textColor="@color/colorYellow"
-                android:textAlignment="textStart"
-                android:fontFamily="@font/arbutus_slab"
-                android:textSize="36sp" android:typeface="normal"
-                tools:ignore="MissingConstraints"
-                app:layout_constraintTop_toBottomOf="@+id/location" android:layout_marginTop="36dp"
-        />
-        <Button
+    <TextView
+            android:layout_width="206dp"
+            android:layout_height="59dp"
+            android:text=""
+            android:ems="10"
+            android:id="@+id/temperature"
+            app:layout_constraintStart_toEndOf="@+id/weatherImg" android:layout_marginStart="28dp"
+            android:textColor="@color/colorYellow"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/arbutus_slab"
+            android:textSize="36sp" android:typeface="normal"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/location" android:layout_marginTop="16dp"
+    />
+    <Button
                 android:text="@string/citi_btn"
                 android:layout_width="234dp"
                 android:layout_height="48dp" android:id="@+id/citi_btn"
