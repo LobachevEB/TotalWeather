@@ -7,4 +7,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MatButton" parent="Theme.MaterialComponents">
+        <item name="colorOnPrimary">@color/colorYellow</item>
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+        <item name="colorOnSurface">@android:color/holo_orange_light</item>
+    </style>
+
+
 </resources>

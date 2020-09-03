@@ -57,21 +57,27 @@
             tools:ignore="MissingConstraints"
             app:layout_constraintTop_toBottomOf="@+id/location" android:layout_marginTop="16dp"
     />
-    <Button
+    <com.google.android.material.button.MaterialButton
                 android:text="@string/citi_btn"
                 android:layout_width="234dp"
                 android:layout_height="48dp" android:id="@+id/citi_btn"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="28dp"
                 android:fontFamily="@font/arbutus_slab"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                android:theme="@style/MatButton"
         />
-        <Button
-                android:text="@string/wiki_caption"
-                android:layout_width="88dp"
-                android:layout_height="41dp" android:id="@+id/wiki"
-                app:layout_constraintStart_toEndOf="@+id/location"
-                android:layout_marginStart="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.023" app:layout_constraintTop_toTopOf="@+id/location"/>
+    <com.google.android.material.button.MaterialButton
+            android:text="@string/wiki_caption"
+            android:layout_width="88dp"
+            android:layout_height="41dp" android:id="@+id/wiki"
+            app:layout_constraintStart_toEndOf="@+id/location"
+            android:layout_marginStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023"
+            app:layout_constraintTop_toTopOf="@+id/location"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:theme="@style/MatButton"
+    />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

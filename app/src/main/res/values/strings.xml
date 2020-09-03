@@ -10,4 +10,6 @@
     <string name="done">Done</string>
     <string name="wiki_caption">Wiki</string>
     <string name="wiki_url">https://en.wikipedia.org/wiki/</string>
+    <string name="loc_not_found">Location not found</string>
+    <string name="exit">Exit</string>
 </resources>

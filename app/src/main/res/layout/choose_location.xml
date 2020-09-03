@@ -40,21 +40,35 @@
             android:layout_height="43dp" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" android:id="@+id/textView" tools:layout_editor_absoluteX="26dp"
             tools:ignore="MissingConstraints"/>
-    <EditText
-            android:layout_width="321dp"
-            android:layout_height="48dp"
-            android:inputType="textPersonName"
+    <com.google.android.material.textfield.TextInputLayout
             android:hint="@string/your_location"
-            android:ems="10"
-            android:id="@+id/editTextLocation"
-            app:layout_constraintStart_toStartOf="@+id/guideline" app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_width="315dp"
+            android:layout_height="65dp"
             android:fontFamily="@font/arbutus_slab"
             android:textSize="16sp"
-    />
-    <Button
+            tools:ignore="MissingConstraints"
+            android:id="@+id/editTextLocationLayout"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextLocation"
+                android:layout_width="301dp"
+                android:layout_height="67dp"
+                android:hint="@string/your_location"
+                android:fontFamily="@font/arbutus_slab"
+                android:textColor="@color/colorYellow"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
             android:text="@string/done"
             android:layout_width="113dp"
             android:layout_height="49dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="16dp"
-            android:id="@+id/done"/>
+            android:id="@+id/done"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:theme="@style/MatButton"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

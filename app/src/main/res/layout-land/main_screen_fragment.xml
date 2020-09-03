@@ -57,7 +57,7 @@
             tools:ignore="MissingConstraints"
             app:layout_constraintHorizontal_bias="0.069" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="4dp"/>
-    <Button
+    <com.google.android.material.button.MaterialButton
             android:text="@string/citi_btn"
             android:layout_width="234dp"
             android:layout_height="48dp" android:id="@+id/citi_btn"
@@ -65,13 +65,19 @@
             android:fontFamily="@font/arbutus_slab"
             app:layout_constraintTop_toBottomOf="@+id/weatherImg"
             app:layout_constraintHorizontal_bias="1.0" app:layout_constraintStart_toStartOf="@+id/weatherImg"
-            android:layout_marginTop="8dp"/>
-    <Button
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:theme="@style/MatButton"
+    />
+    <com.google.android.material.button.MaterialButton
             android:text="@string/wiki_caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/wiki"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" app:layout_constraintStart_toEndOf="@+id/location"
-            android:layout_marginStart="24dp"/>
+            android:layout_marginStart="24dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:theme="@style/MatButton"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
