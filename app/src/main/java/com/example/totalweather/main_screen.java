@@ -79,8 +79,8 @@ public class main_screen extends Fragment {
                 Calendar cl = Calendar.getInstance();
                 cl.set(year,month,day);
                 updateWeatherForward(cl.getTime(),3);
-                temperatureS = weatherProcessing.getWeatherStub("");
-                setValues(SAVE_TEMP_KEY, temperatureS);
+                //temperatureS = weatherProcessing.getWeatherStub("");
+                //setValues(SAVE_TEMP_KEY, temperatureS);
             }
         });
 
@@ -137,8 +137,12 @@ public class main_screen extends Fragment {
         }
 
         if (resultCode == Activity.RESULT_OK){
+            String place = data.getStringExtra("Location");
             TextView location = (TextView) getView().findViewById(R.id.location);
-            location.setText(data.getStringExtra("Location"));
+            location.setText(place);
+            temperatureS = weatherProcessing.getCurrentWeather(place);
+            setValues(SAVE_TEMP_KEY, temperatureS);
+
         }
     }
 
